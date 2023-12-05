@@ -9,15 +9,13 @@ with open("input4.txt") as f:
         id, data = line.split(':')
         id = int(num_regex.search(id).group())
         winning, yours = data.split(' | ')
-        
         winning = set(int(s.group()) for s in num_regex.finditer(winning))
-        
         yours = set(int(s.group()) for s in num_regex.finditer(yours))
+        
         winning_count = len(winning) + len(yours) - len(winning.union(yours))
         # print(winning_count, len(winning) + len(yours), len(winning.union(yours)))
         card_sum +=  (1 << winning_count-1) if winning_count > 0 else (0)
         print(f"id {id}: {(1 << winning_count-1) if winning_count > 0 else (0)}")
-        
         
 print(card_sum)
         
