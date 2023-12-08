@@ -1,10 +1,9 @@
 import itertools as it
-import operator
 from typing import List
-from math import gcd, lcm
+from math import lcm
 
 
-with open("test.txt") as f:
+with open("input8.txt") as f:
     lines = f.read().splitlines()
     seq = lines[0]
     travel_map = {}
