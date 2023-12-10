@@ -20,9 +20,7 @@ with open("input8.txt") as f:
             print(ind)
             break
          
-    
-
-
+#part two
 
 with open("input8.txt") as f:
     lines = f.read().splitlines()
@@ -31,10 +29,8 @@ with open("input8.txt") as f:
     
     for k,v in map(lambda s: s.split(' = '), lines[2:]):
         travel = (v.split(', ')[0][1:], v.split(', ')[1][:-1])
-        # print(travel)
         travel_map[k] = travel
         
-    
     nodes: List[str] = list(filter(lambda s: s[-1] == 'A', travel_map.keys())) 
     times = []
     print(nodes)
